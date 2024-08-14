@@ -33,7 +33,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_email" />
+        app:layout_constraintTop_toBottomOf="@id/edt_email_profile" />
 
     <TextView
         android:id="@+id/label_name"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@id/edt_name" />
 
     <EditText
-        android:id="@+id/edt_email"
+        android:id="@+id/edt_email_profile"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="6dp"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@id/label_class" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"

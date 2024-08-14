@@ -2,14 +2,16 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/menu_tambah_data"
-        android:title="Tambah Data"
-        app:actionLayout="@layout/fragment_tambah_data" />
+    <group android:id="@+id/menu_toolbar_group">
+        <item
+            android:id="@+id/menu_tambah_data"
+            android:title="Tambah Data"
+            app:actionLayout="@layout/fragment_tambah_data" />
 
-    <item
-        android:id="@+id/menu_data_alumni"
-        android:title="Data Alumni"
-        app:actionLayout="@layout/fragment_data_alumni" />
+        <item
+            android:id="@+id/menu_data_alumni"
+            android:title="Data Alumni"
+            app:actionLayout="@layout/fragment_data_alumni" />
+    </group>
 
 </menu>

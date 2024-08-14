@@ -1,64 +1,117 @@
 package dts.pnj.pendataanalumni;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.button.MaterialButton;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class ProfileFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private static final String FILENAME = "userfile.txt";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        String fileContents = readInternalStorage();
+        parseFileContents(fileContents, view);
+
+        MaterialButton btnLogout = view.findViewById(R.id.btn_logout);
+        btnLogout.setOnClickListener(v -> showLogoutConfirmationDialog());
+
+        if (getActivity() instanceof MainActivity) {
+            ((MainActivity) getActivity()).setToolbarTitle("Profile");
+        }
+
+        return view;
+    }
+
+    private String readInternalStorage() {
+        File file = new File(requireActivity().getFilesDir(), FILENAME);
+        StringBuilder fileContents = new StringBuilder();
+
+        try (FileInputStream fis = new FileInputStream(file)) {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                fileContents.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+
+        return fileContents.toString();
+    }
+
+    private void parseFileContents(String fileContents, View view) {
+        String[] lines = fileContents.split("\n");
+        if (lines.length >= 4) {
+            String email = lines[0].replace("Email: ", "");
+            String nim = lines[1].replace("NIM: ", "");
+            String name = lines[2].replace("Name: ", "");
+            String className = lines[3].replace("Kelas: ", "");
+
+            updateUI(email, nim, name, className, view);
+        }
+    }
+
+    private void updateUI(String email, String nim, String name, String className, View view) {
+        if (view != null) {
+            EditText edtEmail = view.findViewById(R.id.edt_email_profile);
+            EditText edtNim = view.findViewById(R.id.edt_nim);
+            EditText edtName = view.findViewById(R.id.edt_name);
+            EditText edtClass = view.findViewById(R.id.edt_class);
+
+            if (edtEmail != null) edtEmail.setText(email);
+            if (edtNim != null) edtNim.setText(nim);
+            if (edtName != null) edtName.setText(name);
+            if (edtClass != null) edtClass.setText(className);
+        }
+    }
+
+    private void showLogoutConfirmationDialog() {
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+                .setPositiveButton("Yes", (dialog, which) -> handleLogout())
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    private void handleLogout() {
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+        hapusFile();
+
+        Intent intent = new Intent(requireActivity(), MainActivity.class);
+        startActivity(intent);
+        requireActivity().finish();
+    }
+
+    private void hapusFile() {
+        File file = new File(requireActivity().getFilesDir(), FILENAME);
+        if (file.exists()) {
+            file.delete();
+        }
     }
 }

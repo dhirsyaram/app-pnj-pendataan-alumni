@@ -1,5 +1,7 @@
 package dts.pnj.pendataanalumni;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,10 +30,7 @@ public class LoginFragment extends Fragment {
         edtPass = view.findViewById(R.id.edt_password);
         MaterialButton btnLogin = view.findViewById(R.id.btn_login);
 
-
-        btnLogin.setOnClickListener(click -> {
-            processLogin();
-        });
+        btnLogin.setOnClickListener(click -> processLogin());
 
         return view;
     }
@@ -41,15 +40,19 @@ public class LoginFragment extends Fragment {
         String pass = edtPass.getText().toString();
 
         String setEmail = "dhirsya@education.com";
-        String setPassword = "belajarGiat123";
+        String setPassword = "belajargiat123";
 
         if (email.equals(setEmail) && pass.equals(setPassword)) {
-
+            // Save user data
             String setNIM = "50421369";
             String setName = "Dhirsya Ramadhan Pattah";
             String setClass = "3IA20";
             saveInternalStorage(setEmail, setNIM, setName, setClass);
 
+            // Save login status
+            saveLoginStatus(true);
+
+            // Navigate to HomeFragment
             ((MainActivity) requireActivity()).navigateToHomeFragment();
 
             Toast.makeText(getActivity(), "Berhasil Login", Toast.LENGTH_SHORT).show();
@@ -65,9 +68,17 @@ public class LoginFragment extends Fragment {
         File file = new File(requireActivity().getFilesDir(), FILENAME);
         try (FileOutputStream fos = new FileOutputStream(file)){
             fos.write(fileContents.getBytes());
+            fos.flush();
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+    }
+
+    private void saveLoginStatus(boolean isLoggedIn) {
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("is_logged_in", isLoggedIn);
+        editor.apply();
     }
 }
