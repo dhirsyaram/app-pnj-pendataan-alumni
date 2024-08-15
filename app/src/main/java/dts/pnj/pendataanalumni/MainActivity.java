@@ -75,6 +75,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void setToolbarBackButton(boolean show) {
+        if (toolbar != null) {
+            if (show) {
+                toolbar.setNavigationIcon(R.drawable.baseline_arrow_back_24);
+                toolbar.setNavigationOnClickListener(v -> onBackPressed());
+            } else {
+                toolbar.setNavigationIcon(null);
+            }
+        }
+    }
+
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -133,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         Log.d("MainActivity", "Current Fragment: " + currentFragment);
         menu.setGroupVisible(R.id.menu_toolbar_group, !(currentFragment instanceof TambahDataFragment));
+        menu.setGroupVisible(R.id.menu_toolbar_group, !(currentFragment instanceof DataAlumniFragment));
         return super.onPrepareOptionsMenu(menu);
     }
 }

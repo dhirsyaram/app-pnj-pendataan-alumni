@@ -7,7 +7,7 @@
     tools:context=".DataAlumniFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_data"
+        android:id="@+id/rv_data_alumni"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"

@@ -1,64 +1,65 @@
 package dts.pnj.pendataanalumni;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DetailDataAlumniFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 public class DetailDataAlumniFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_ALUMNI = "arg_alumni";
+    private Alumni alumni;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public DetailDataAlumniFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DetailDataAlumniFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DetailDataAlumniFragment newInstance(String param1, String param2) {
+    public static DetailDataAlumniFragment newInstance(Alumni alumni) {
         DetailDataAlumniFragment fragment = new DetailDataAlumniFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putParcelable(ARG_ALUMNI, alumni);
         fragment.setArguments(args);
         return fragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            alumni = getArguments().getParcelable(ARG_ALUMNI);
         }
     }
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail_data_alumni, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_detail_data_alumni, container, false);
+
+        EditText edtNim = view.findViewById(R.id.edt_nim_data_detail);
+        EditText edtNama = view.findViewById(R.id.edt_name_data_detail);
+        EditText edtTempatLahir = view.findViewById(R.id.edt_tempat_lahir_detail);
+        EditText edtTglLahir = view.findViewById(R.id.edt_tanggal_lahir_detail);
+        EditText edtAlamat = view.findViewById(R.id.edt_alamat_detail);
+        EditText edtAgama = view.findViewById(R.id.edt_agama_detail);
+        EditText edtTlpHp = view.findViewById(R.id.edt_telp_hp_detail);
+        EditText edtThnMasuk = view.findViewById(R.id.edt_tahun_masuk_detail);
+        EditText edtThnLulus = view.findViewById(R.id.edt_tahun_lulus_detail);
+        EditText edtPekerjaan = view.findViewById(R.id.edt_pekerjaan_detail);
+        EditText edtJabatan = view.findViewById(R.id.edt_jabatan_detail);
+
+        edtNim.setText(alumni.getNim());
+        edtNama.setText(alumni.getNama());
+        edtTempatLahir.setText(alumni.getTempatLahir());
+        edtTglLahir.setText(alumni.getTanggalLahir());
+        edtAlamat.setText(alumni.getAlamat());
+        edtAgama.setText(alumni.getAgama());
+        edtTlpHp.setText(alumni.getTlpHp());
+        edtThnMasuk.setText(alumni.getTahunMasuk());
+        edtThnLulus.setText(alumni.getTahunLulus());
+        edtPekerjaan.setText(alumni.getPekerjaan());
+        edtJabatan.setText(alumni.getJabatan());
+
+        return view;
     }
 }

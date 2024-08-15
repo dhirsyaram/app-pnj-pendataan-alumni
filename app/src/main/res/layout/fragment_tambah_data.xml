@@ -33,9 +33,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_nim_data"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_nim_data"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Name -->
         <TextView
@@ -45,8 +46,8 @@
             android:text="Name"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_nim_data"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_nim_data" />
 
         <EditText
             android:id="@+id/edt_name_data"
@@ -54,9 +55,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_name_data"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_name_data"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Tempat Lahir -->
         <TextView
@@ -66,8 +68,8 @@
             android:text="Tempat Lahir"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_name_data"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_name_data" />
 
         <EditText
             android:id="@+id/edt_tempat_lahir"
@@ -75,9 +77,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_tempat_lahir"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tempat_lahir"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Tanggal Lahir -->
         <TextView
@@ -87,18 +90,20 @@
             android:text="Tanggal Lahir"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tempat_lahir"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tempat_lahir" />
 
         <EditText
             android:id="@+id/edt_tanggal_lahir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_edit_calendar_24"
             android:ems="10"
             android:inputType="date"
-            app:layout_constraintTop_toBottomOf="@id/label_tanggal_lahir"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tanggal_lahir"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Alamat -->
         <TextView
@@ -108,8 +113,8 @@
             android:text="Alamat"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tanggal_lahir"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tanggal_lahir" />
 
         <EditText
             android:id="@+id/edt_alamat"
@@ -117,9 +122,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_alamat"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_alamat"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Agama -->
         <TextView
@@ -129,8 +135,8 @@
             android:text="Agama"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_alamat"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_alamat" />
 
         <EditText
             android:id="@+id/edt_agama"
@@ -138,9 +144,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_agama"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_agama"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Telepon/HP -->
         <TextView
@@ -150,8 +157,8 @@
             android:text="Tlp/hp"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_agama"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_agama" />
 
         <EditText
             android:id="@+id/edt_telp_hp"
@@ -159,9 +166,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            app:layout_constraintTop_toBottomOf="@id/label_telp_hp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_telp_hp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Tahun Masuk -->
         <TextView
@@ -171,18 +179,20 @@
             android:text="Tahun Masuk"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_telp_hp"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_telp_hp" />
 
         <EditText
             android:id="@+id/edt_tahun_masuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_edit_calendar_24"
             android:ems="10"
             android:inputType="date"
-            app:layout_constraintTop_toBottomOf="@id/label_tahun_masuk"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tahun_masuk"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Tahun Lulus -->
         <TextView
@@ -192,18 +202,20 @@
             android:text="Tahun Lulus"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tahun_masuk"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tahun_masuk" />
 
         <EditText
             android:id="@+id/edt_tahun_lulus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_edit_calendar_24"
             android:ems="10"
             android:inputType="date"
-            app:layout_constraintTop_toBottomOf="@id/label_tahun_lulus"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tahun_lulus"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Pekerjaan -->
         <TextView
@@ -213,18 +225,19 @@
             android:text="Pekerjaan"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tahun_lulus"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tahun_lulus" />
 
         <EditText
             android:id="@+id/edt_pekerjaan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            app:layout_constraintTop_toBottomOf="@id/label_pekerjaan"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_pekerjaan"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Jabatan -->
         <TextView
@@ -234,8 +247,8 @@
             android:text="Jabatan"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_pekerjaan"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_pekerjaan" />
 
         <EditText
             android:id="@+id/edt_jabatan"
@@ -243,23 +256,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_jabatan"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_jabatan" />
 
         <!-- Bottom Button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_save_data"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Batal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edt_jabatan" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cancel_data"
             style="@style/Widget.Material3.Button"
@@ -267,10 +268,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Save"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="Batal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_save_data" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_jabatan" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_data"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_cancel_data" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

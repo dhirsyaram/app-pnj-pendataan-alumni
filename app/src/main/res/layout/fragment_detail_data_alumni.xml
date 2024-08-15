@@ -28,14 +28,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edt_nim_data"
+            android:id="@+id/edt_nim_data_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_nim_data"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_nim_data" />
 
         <!-- Name -->
         <TextView
@@ -45,18 +45,18 @@
             android:text="Name"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_nim_data"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_nim_data_detail" />
 
         <EditText
-            android:id="@+id/edt_name_data"
+            android:id="@+id/edt_name_data_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_name_data"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_name_data" />
 
         <!-- Tempat Lahir -->
         <TextView
@@ -66,18 +66,18 @@
             android:text="Tempat Lahir"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_name_data"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_name_data_detail" />
 
         <EditText
-            android:id="@+id/edt_tempat_lahir"
+            android:id="@+id/edt_tempat_lahir_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_tempat_lahir"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tempat_lahir" />
 
         <!-- Tanggal Lahir -->
         <TextView
@@ -87,18 +87,19 @@
             android:text="Tanggal Lahir"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tempat_lahir"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tempat_lahir_detail" />
 
         <EditText
-            android:id="@+id/edt_tanggal_lahir"
+            android:id="@+id/edt_tanggal_lahir_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_edit_calendar_24"
             android:ems="10"
             android:inputType="date"
-            app:layout_constraintTop_toBottomOf="@id/label_tanggal_lahir"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tanggal_lahir" />
 
         <!-- Alamat -->
         <TextView
@@ -108,18 +109,18 @@
             android:text="Alamat"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tanggal_lahir"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tanggal_lahir_detail" />
 
         <EditText
-            android:id="@+id/edt_alamat"
+            android:id="@+id/edt_alamat_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_alamat"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_alamat" />
 
         <!-- Agama -->
         <TextView
@@ -129,18 +130,18 @@
             android:text="Agama"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_alamat"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_alamat_detail" />
 
         <EditText
-            android:id="@+id/edt_agama"
+            android:id="@+id/edt_agama_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_agama"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_agama" />
 
         <!-- Telepon/HP -->
         <TextView
@@ -150,18 +151,18 @@
             android:text="Tlp/hp"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_agama"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_agama_detail" />
 
         <EditText
-            android:id="@+id/edt_telp_hp"
+            android:id="@+id/edt_telp_hp_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            app:layout_constraintTop_toBottomOf="@id/label_telp_hp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_telp_hp" />
 
         <!-- Tahun Masuk -->
         <TextView
@@ -171,18 +172,19 @@
             android:text="Tahun Masuk"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_telp_hp"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_telp_hp_detail" />
 
         <EditText
-            android:id="@+id/edt_tahun_masuk"
+            android:id="@+id/edt_tahun_masuk_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_edit_calendar_24"
             android:ems="10"
             android:inputType="date"
-            app:layout_constraintTop_toBottomOf="@id/label_tahun_masuk"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tahun_masuk" />
 
         <!-- Tahun Lulus -->
         <TextView
@@ -192,18 +194,19 @@
             android:text="Tahun Lulus"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tahun_masuk"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tahun_masuk_detail" />
 
         <EditText
-            android:id="@+id/edt_tahun_lulus"
+            android:id="@+id/edt_tahun_lulus_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_edit_calendar_24"
             android:ems="10"
             android:inputType="date"
-            app:layout_constraintTop_toBottomOf="@id/label_tahun_lulus"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_tahun_lulus" />
 
         <!-- Pekerjaan -->
         <TextView
@@ -213,18 +216,18 @@
             android:text="Pekerjaan"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_tahun_lulus"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_tahun_lulus_detail" />
 
         <EditText
-            android:id="@+id/edt_pekerjaan"
+            android:id="@+id/edt_pekerjaan_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            app:layout_constraintTop_toBottomOf="@id/label_pekerjaan"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_pekerjaan" />
 
         <!-- Jabatan -->
         <TextView
@@ -234,43 +237,54 @@
             android:text="Jabatan"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edt_pekerjaan"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_pekerjaan_detail" />
 
         <EditText
-            android:id="@+id/edt_jabatan"
+            android:id="@+id/edt_jabatan_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/label_jabatan"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/label_jabatan" />
 
         <!-- Bottom Button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_delete_data"
+            android:id="@+id/btn_delete_data_detail"
             style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="Hapus"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edt_jabatan" />
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/edt_jabatan_detail" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_save_detail_data"
             style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="Ubah"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_delete_data" />
+            app:layout_constraintTop_toBottomOf="@id/edt_jabatan" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="186dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

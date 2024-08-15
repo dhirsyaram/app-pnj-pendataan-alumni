@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:id="@+id/menu_toolbar_group">
         <item
@@ -13,5 +13,12 @@
             android:title="Data Alumni"
             app:actionLayout="@layout/fragment_data_alumni" />
     </group>
+
+    <item
+        android:id="@+id/action_back"
+        android:icon="@drawable/baseline_arrow_back_24"
+        app:showAsAction="always"
+        android:title="Back"
+        app:actionViewClass="androidx.appcompat.widget.Toolbar" />
 
 </menu>
