@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "AlumniData.db";
     private static final int DATABASE_VERSION = 1;
-
+    public static final String COLUMN_ID = "id";
     public static final String TABLE_NAME = "alumni";
     public static final String COLUMN_NIM = "nim";
     public static final String COLUMN_NAME = "name";
@@ -36,7 +36,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_ALUMNI_TABLE = "CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_NIM + " TEXT PRIMARY KEY, " +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NIM + " TEXT UNIQUE, " +
                 COLUMN_NAME + " TEXT, " +
                 COLUMN_TEMPAT_LAHIR + " TEXT, " +
                 COLUMN_TGL_LAHIR + " TEXT, " +
@@ -49,6 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_JABATAN + " TEXT)";
         db.execSQL(CREATE_ALUMNI_TABLE);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -129,4 +131,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return alumniList;
     }
+
+    public int updateAlumni(String nim, String newNim, String name, String tempatLahir, String tanggalLahir,
+                            String alamat, String agama, String telpHp, String tahunMasuk,
+                            String tahunLulus, String pekerjaan, String jabatan) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NIM, newNim);  // NIM yang baru
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_TEMPAT_LAHIR, tempatLahir);
+        values.put(COLUMN_TGL_LAHIR, tanggalLahir);
+        values.put(COLUMN_ALAMAT, alamat);
+        values.put(COLUMN_AGAMA, agama);
+        values.put(COLUMN_TELP_HP, telpHp);
+        values.put(COLUMN_TAHUN_MASUK, tahunMasuk);
+        values.put(COLUMN_TAHUN_LULUS, tahunLulus);
+        values.put(COLUMN_PEKERJAAN, pekerjaan);
+        values.put(COLUMN_JABATAN, jabatan);
+
+        return db.update(TABLE_NAME, values, COLUMN_NIM + "=?", new String[]{nim});
+    }
+
+    public int deleteAlumni(String nim) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, COLUMN_NIM + "=?", new String[]{nim});
+    }
+
 }

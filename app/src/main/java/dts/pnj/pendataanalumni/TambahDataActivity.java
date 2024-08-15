@@ -1,5 +1,6 @@
 package dts.pnj.pendataanalumni;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -21,8 +22,10 @@ public class TambahDataActivity extends ToolBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_data);
 
-        // Setup Toolbar
-        setupToolbar(R.id.toolbarTambah, "Tambah Data", true); // Set toolbar title and show back button
+        setupToolbar(R.id.toolbarTambah, "Tambah Data", true);
+        toolbar.setNavigationOnClickListener(v -> {
+            super.onBackPressed();
+        });
 
         EditText edtNim = findViewById(R.id.edt_nim_data);
         EditText edtNama = findViewById(R.id.edt_name_data);
@@ -79,7 +82,6 @@ public class TambahDataActivity extends ToolBarActivity {
             navigateToHomeActivity();
         }
 
-        // Reset semua input setelah menyimpan data
         edtNama.setText("");
         edtNim.setText("");
         edtTglLahir.setText("");
@@ -137,5 +139,11 @@ public class TambahDataActivity extends ToolBarActivity {
         });
 
         datePicker.show(getSupportFragmentManager(), "YEAR_PICKER");
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back button is disabled in this screen", Toast.LENGTH_SHORT).show();
     }
 }

@@ -23,22 +23,20 @@ public class DataAlumniActivity extends ToolBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_alumni);
 
-        // Initialize DatabaseHelper
         dbHelper = new DatabaseHelper(this);
 
-        // Set up the toolbar with title "Data Alumni" and no back button (since it's a main activity)
         setupToolbar(R.id.toolbarDataAlumni, "Data Alumni", true);
+        toolbar.setNavigationOnClickListener(v -> {
+            super.onBackPressed();
+        });
 
-        // Configure the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.rv_data_alumni);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Set up the adapter with a click listener to open DetailDataAlumniActivity
         alumniAdapter = new DataAdapter(alumniList, alumni -> DetailDataAlumniActivity.start(this, alumni));
 
         recyclerView.setAdapter(alumniAdapter);
 
-        // Load the data from the database
         loadData();
     }
 
@@ -55,7 +53,6 @@ public class DataAlumniActivity extends ToolBarActivity {
     @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
-        // Do nothing to disable the back button
         Toast.makeText(this, "Back button is disabled in this screen", Toast.LENGTH_SHORT).show();
     }
 }
