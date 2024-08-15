@@ -5,6 +5,7 @@
     <color name="colorPrimary">#5c6b73</color>
     <color name="colorPrimaryVariant">#253237</color>
     <color name="colorOnPrimary">#e0fbfc</color>
+    <color name="colorSimple">#49E1ECDC</color>
 
     <color name="colorSecondary">#9db4c0</color>
     <color name="colorSecondaryVariant">#c2dfe3 </color>

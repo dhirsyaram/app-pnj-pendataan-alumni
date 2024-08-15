@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.activity;
 
 import android.os.Bundle;
 

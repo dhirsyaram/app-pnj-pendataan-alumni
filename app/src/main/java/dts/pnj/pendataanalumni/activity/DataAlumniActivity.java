@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import dts.pnj.pendataanalumni.R;
+import dts.pnj.pendataanalumni.data.Alumni;
+import dts.pnj.pendataanalumni.data.DataAdapter;
+import dts.pnj.pendataanalumni.data.DatabaseHelper;
 
 public class DataAlumniActivity extends ToolBarActivity {
 

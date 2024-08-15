@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="dts.pnj.pendataanalumni.LoginFragment"
+        android:name="dts.pnj.pendataanalumni.fragment.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="dts.pnj.pendataanalumni.HomeFragment"
+        android:name="dts.pnj.pendataanalumni.fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_news"
-        android:name="dts.pnj.pendataanalumni.BeritaFragment"
+        android:name="dts.pnj.pendataanalumni.fragment.BeritaFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_berita" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="dts.pnj.pendataanalumni.ProfileFragment"
+        android:name="dts.pnj.pendataanalumni.fragment.ProfileFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_profile" />
 

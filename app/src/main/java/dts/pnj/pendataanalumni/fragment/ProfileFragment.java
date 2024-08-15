@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +19,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import dts.pnj.pendataanalumni.activity.MainActivity;
+import dts.pnj.pendataanalumni.R;
 
 public class ProfileFragment extends Fragment {
 

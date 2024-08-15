@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import dts.pnj.pendataanalumni.R;
+import dts.pnj.pendataanalumni.fragment.BeritaFragment;
+import dts.pnj.pendataanalumni.fragment.HomeFragment;
+import dts.pnj.pendataanalumni.fragment.LoginFragment;
+import dts.pnj.pendataanalumni.fragment.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 

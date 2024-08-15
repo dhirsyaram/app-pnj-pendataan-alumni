@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import dts.pnj.pendataanalumni.R;
+import dts.pnj.pendataanalumni.data.Alumni;
+import dts.pnj.pendataanalumni.data.DatabaseHelper;
 
 public class DetailDataAlumniActivity extends ToolBarActivity {
 

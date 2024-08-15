@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,6 +16,9 @@ import com.google.android.material.button.MaterialButton;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import dts.pnj.pendataanalumni.activity.MainActivity;
+import dts.pnj.pendataanalumni.R;
 
 public class LoginFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;

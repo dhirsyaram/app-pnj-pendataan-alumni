@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,6 +14,9 @@ import com.google.android.material.datepicker.MaterialDatePicker;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+
+import dts.pnj.pendataanalumni.R;
+import dts.pnj.pendataanalumni.data.DatabaseHelper;
 
 public class TambahDataActivity extends ToolBarActivity {
 

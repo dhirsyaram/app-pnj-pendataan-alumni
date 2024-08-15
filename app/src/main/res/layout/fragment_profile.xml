@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:padding="6dp"
-    tools:context=".ProfileFragment">
+    tools:context=".fragment.ProfileFragment">
 
     <TextView
         android:id="@+id/label_email"

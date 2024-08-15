@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.data;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import dts.pnj.pendataanalumni.R;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.AlumniViewHolder> {
 

@@ -21,16 +21,19 @@
         android:theme="@style/Theme.PendataanAlumni"
         tools:targetApi="31">
         <activity
-            android:name=".DataAlumniActivity"
+            android:name=".activity.DetailBeritaActivity"
             android:exported="false" />
         <activity
-            android:name=".TambahDataActivity"
+            android:name=".activity.DataAlumniActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailDataAlumniActivity"
+            android:name=".activity.TambahDataActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.DetailDataAlumniActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

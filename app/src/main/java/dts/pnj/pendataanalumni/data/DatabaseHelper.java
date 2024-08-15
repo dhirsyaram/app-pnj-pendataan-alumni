@@ -1,4 +1,4 @@
-package dts.pnj.pendataanalumni;
+package dts.pnj.pendataanalumni.data;
 
 import android.content.ContentValues;
 import android.content.Context;
