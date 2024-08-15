@@ -1,11 +1,13 @@
 package dts.pnj.pendataanalumni;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -29,12 +31,25 @@ public class DetailDataAlumniFragment extends Fragment {
         if (getArguments() != null) {
             alumni = getArguments().getParcelable(ARG_ALUMNI);
         }
+
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+            }
+        });
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_detail_data_alumni, container, false);
+
+        MainActivity mainActivity = (MainActivity) getActivity();
+        assert mainActivity != null;
+        mainActivity.setToolbarVisibility(true);
+        mainActivity.setToolbarBackButton(true);
+        mainActivity.setBottomNavigationViewVisibility(false);
+        mainActivity.setToolbarTitle("Detail Data Alumni");
 
         EditText edtNim = view.findViewById(R.id.edt_nim_data_detail);
         EditText edtNama = view.findViewById(R.id.edt_name_data_detail);
@@ -61,5 +76,27 @@ public class DetailDataAlumniFragment extends Fragment {
         edtJabatan.setText(alumni.getJabatan());
 
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (getActivity() instanceof MainActivity) {
+            MainActivity mainActivity = (MainActivity) getActivity();
+            mainActivity.setToolbarVisibility(true);
+            mainActivity.setToolbarBackButton(false);
+            mainActivity.setBottomNavigationViewVisibility(true);
+        }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.setToolbarVisibility(true);
+        mainActivity.setToolbarBackButton(true);
+        mainActivity.setBottomNavigationViewVisibility(false);
+        mainActivity.setToolbarTitle("Detail Data Alumni");
+        Log.d("DetailDataAlumniFragment", "onViewCreated called");
     }
 }

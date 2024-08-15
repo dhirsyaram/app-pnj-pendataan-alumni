@@ -72,4 +72,5 @@ public class DataAlumniFragment extends Fragment {
             mainActivity.setBottomNavigationViewVisibility(true);
         }
     }
+
 }

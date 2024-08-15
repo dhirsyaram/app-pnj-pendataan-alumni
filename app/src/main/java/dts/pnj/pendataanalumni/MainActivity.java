@@ -1,9 +1,9 @@
 package dts.pnj.pendataanalumni;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -69,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void setBottomNavigationViewVisibility(boolean visible) {
+    public void setBottomNavigationViewVisibility(boolean isVisible) {
         if (bottomNavigationView != null) {
-            bottomNavigationView.setVisibility(visible ? View.VISIBLE : View.GONE);
+            bottomNavigationView.setVisibility(isVisible ? View.VISIBLE : View.GONE);
         }
     }
 
@@ -86,22 +84,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void loadFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-
-        invalidateMenu();
-    }
-
     private void checkLoginStatus() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         boolean isLoggedIn = sharedPreferences.getBoolean("is_logged_in", false);
 
         if (isLoggedIn) {
-            navigateToHomeFragment();
+            loadFragment(new HomeFragment());
             setBottomNavigationViewVisibility(true);
             setToolbarVisibility(true);
         } else {
@@ -126,25 +114,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Fragment selectedFragment;
+        Intent intent;
         if (item.getItemId() == R.id.menu_data_alumni) {
-            selectedFragment = new DataAlumniFragment();
+            intent = new Intent(this, DataAlumniActivity.class);
         } else if (item.getItemId() == R.id.menu_tambah_data) {
-            selectedFragment = new TambahDataFragment();
+            intent = new Intent(this, TambahDataActivity.class);
         } else {
             return super.onOptionsItemSelected(item);
         }
 
-        loadFragment(selectedFragment);
+        startActivity(intent);
         return true;
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        Log.d("MainActivity", "Current Fragment: " + currentFragment);
-        menu.setGroupVisible(R.id.menu_toolbar_group, !(currentFragment instanceof TambahDataFragment));
-        menu.setGroupVisible(R.id.menu_toolbar_group, !(currentFragment instanceof DataAlumniFragment));
-        return super.onPrepareOptionsMenu(menu);
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 }
