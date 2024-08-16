@@ -3,4 +3,8 @@
     <string name="home">Beranda</string>
     <string name="news">Berita</string>
     <string name="profile">Profil</string>
+    <string name="desc_app">Aplikasi Pendataan Alumni ini ialah aplikasi yang dapat manajemen data-data mengenai alumni dengan data tersebut dapat disimpan ke sebuah database.
+    Pengguna diperlukan melakukan login pada aplikasi dan dapat melihat data mereka pada halaman profile. Data alumni bisa juga ditambahkan dengan mengakses halaman tambah data
+        dan ada beberapa inputan yang perlu diisi agar dapat menyimpan. Data alumni pun bisa diperbarui dan dihapus juga. Aplikasi ini juga sudah dapat menampilkan beberapa berita
+        yang diambil dari sebuah API tersedia secara publik sehingga aman dipakai bahkan berita tersebut dapat dilihat detailnya. </string>
 </resources>
